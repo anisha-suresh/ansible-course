@@ -1,0 +1,13 @@
+---
+- name: this playbook installs apche2 on ubuntu
+  hosts: dbservers
+  become: true
+  tasks:
+  - name: installs apache2
+    apt:
+      name: apache2
+      state: present
+  - name: starts apache2
+    service:
+      name: apache2
+      state: started
